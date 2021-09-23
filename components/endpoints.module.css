@@ -21,12 +21,41 @@
 }
 .no_endpoints{
     font-style: italic;
+    transition: 1s;
 }
 .endpoints_list{
     overflow: auto;
     max-height: 60vh;;
     padding: 10px;
+    overflow-x: hidden;
 }
 .endpoints_item{
     list-style: none;
+    transition: 0.5s;
 }
+.enter {
+    opacity: 0.01;
+    transition: opacity 0.5s ;
+    transform: translateX(100%);
+  }
+  .enter.enterActive {
+    opacity: 1;
+  }
+  .leave {
+    opacity: 1;
+    
+    transition: opacity 0.5s ;
+  }
+  .leave.leaveActive {
+    transition: 0.5s;
+    transform: translateX(100%);
+    opacity: 0.01;
+  }
+  .appear {
+    opacity: 0.01;
+  }
+  .appear.appearActive {
+    
+    opacity: 1;
+    transition: opacity 0.5s;
+  }

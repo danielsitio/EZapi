@@ -28,8 +28,9 @@ export default function Endpoints() {
                 <label className={styles.endpoints_label}>Endpoints</label>
                 <FontAwesomeIcon className={styles.endpoints_button} icon={faPlusSquare} onClick={addEndpoint}/>
             </div>
+            
             <ul className={styles.endpoints_list}>
-                <ReactCSSTransitionGroup transitionName="fade" transitionEnterTimeOut={500} transitionLeaveTimeOut={300}>
+                <ReactCSSTransitionGroup transitionAppear={true} transitionAppearTimeout={300} transitionEnterTimeout={300} transitionLeaveTimeout={300} transitionName={styles}>
                 {
                     endpoints.length==0 ? <div className={styles.no_endpoints}>No endpoints added</div> :  endpoints.map((endpoint)=>
                         <li key={endpoint.id} className={styles.endpoints_item}>
