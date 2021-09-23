@@ -3,9 +3,11 @@ import styles from './project.module.css'
 
 export default function Project() {
 
-
-    function chooseLanguage() {
+    function chooseLanguage(){
+        
     }
+
+
 
     return (
         <div className={styles.project_container}>

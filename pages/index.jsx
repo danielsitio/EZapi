@@ -7,6 +7,7 @@ export default function Home() {
 
   function handleSubmit(e){
     e.preventDefault()
+    alert("se apreto el boton submit")
 }
 
   return (
@@ -38,7 +39,7 @@ export default function Home() {
 
           <div className={styles.actions}>
             <div className={styles.actions_container}>
-              <button className={styles.button_generate}>GENERATE</button>
+              <button  className={styles.button_generate} type="submit">GENERATE</button>
             </div>
           </div>
 
