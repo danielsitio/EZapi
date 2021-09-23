@@ -1,0 +1,32 @@
+.endpoints_header{
+    border-bottom: white 1px solid;
+    padding-bottom: 5px;
+}
+.endpoints_label{
+    display: inline-block;
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 5px;
+}
+.endpoints_button{
+    font-size: 40px;
+    float: right;
+    transition: 0.3s;
+    color: greenyellow;
+    cursor: pointer;
+}
+.endpoints_button:active{
+    font-size: 43px;
+}
+.no_endpoints{
+    font-style: italic;
+}
+.endpoints_list{
+    overflow: auto;
+    max-height: 60vh;;
+    padding: 10px;
+}
+.endpoints_item{
+    list-style: none;
+}

@@ -1,0 +1,26 @@
+.basics{
+    display: flex;
+
+}
+.project_name,.language{
+    flex: 50%;
+}
+.label{
+    font-weight: 700;
+    font-size: 20px;
+}
+.name_container{
+    margin-top: 15px;
+}
+.input{
+    color: white;
+    background: transparent;
+    border: none;
+    font-weight: lighter;
+    border-bottom: white 2px solid;
+    outline: none;
+}
+.radio_input{
+    accent-color:greenyellow;
+    background-color: greenyellow;
+}

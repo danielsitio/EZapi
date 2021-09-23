@@ -1,0 +1,41 @@
+.endpoint{
+    position: relative;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    border-bottom: greenyellow 1px solid;
+    margin-bottom: 10px;
+}
+.text_input{
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: white 2px solid;
+    outline: none;
+    line-height: 40px;
+    flex: 50%;
+}
+.filler{
+    flex-grow: 1;
+}
+.select{
+    background-color: white;
+    border: none;
+}
+.delete{
+    margin-left: 30px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.1s;
+}
+.delete:hover{
+    color: red;
+}
+.delete:active{
+    font-size: 33px;
+}
+
+
+.out{
+    transform: translateX(100%);
+}
