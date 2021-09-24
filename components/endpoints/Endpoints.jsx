@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import Endpoint from './Endpoint'
+import Endpoint from '../endpoint/Endpoint'
 import styles from './endpoints.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusSquare } from "@fortawesome/free-solid-svg-icons";

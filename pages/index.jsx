@@ -1,14 +1,32 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Endpoints from '../components/Endpoints'
-import Project from '../components/Project'
+import Endpoints from '../components/endpoints/Endpoints'
+import Project from '../components/project/Project'
+import {useState} from 'react'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub} from "@fortawesome/free-brands-svg-icons";
+
+let copia
 export default function Home() {
 
+  const [preferences, setPreferences] = useState({
+    name:"",
+    language:"js",
+    cors:false,
+    db:"",
+    endpoints:[]
+  })
+
   function handleSubmit(e){
+   
+    copia=JSON.parse(JSON.stringify(preferences))
+    copia.name=document.getElementById("name").value
+    copia.db=document.getElementById("db").value
+    setPreferences(copia)
+    alert(JSON.stringify(preferences))
     e.preventDefault()
-    alert("se apreto el boton submit")
-}
+  }
 
   return (
 
@@ -22,15 +40,14 @@ export default function Home() {
           EZ API
         </h1>
         <div className={styles.filler}/>
-        <div className={styles.git}>GITHUB</div>
-        <div className={styles.light}>LIGHT</div>
+        <a href=""><FontAwesomeIcon className={styles.github} icon={faGithub}/></a>
       </header>
       <hr/>
-      <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
+      <form  className={styles.form} autoComplete="off">
         <div className={styles.form_wraper}>
 
           <div className={styles.project}>
-            <Project/>
+            <Project setPreferences={setPreferences} actualPreferences={preferences} />
           </div>
 
           <div  className={styles.endpoints}>
@@ -39,7 +56,7 @@ export default function Home() {
 
           <div className={styles.actions}>
             <div className={styles.actions_container}>
-              <button  className={styles.button_generate} type="submit">GENERATE</button>
+              <button  className={styles.button_generate} onClick={handleSubmit}>GENERATE</button>
             </div>
           </div>
 

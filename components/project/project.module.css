@@ -1,12 +1,12 @@
 .basics{
     display: flex;
-
+    margin-bottom: 50px;
 }
 .project_name,.language{
     flex: 50%;
 }
 .project_name{
-    padding-right: 20px;
+    padding-right: 50px;
 }
 .label{
     font-weight: 700;
@@ -26,4 +26,24 @@
 .radio_input{
     accent-color:greenyellow;
     background-color: greenyellow;
+}
+
+.options{
+    display: flex;
+}
+
+.db,.cors{
+    flex: 50%;
+}
+.select_db{
+    background-color: #1b1f23;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-left: 10px ;
+    font-weight: 500;
+    padding: 3px;
+}
+.check_cors{
+    accent-color:greenyellow;
 }

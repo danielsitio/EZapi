@@ -17,6 +17,9 @@
 .filler{
   flex-grow: 1;
 }
+.github{
+  font-size: 40px;
+}
 .form{
   position: relative;
 }
@@ -27,6 +30,9 @@
 .project,.endpoints{
   flex: 50%;
   padding: 5px;
+}
+.project{
+  border-right: gray 1px solid;
 }
 .actions{
   display: block;
@@ -66,5 +72,8 @@
   }
   .project,.endpoints{
     flex: none;
+  }
+  .project{
+    border-right: none;
   }
 }

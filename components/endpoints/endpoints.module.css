@@ -35,8 +35,8 @@
 }
 .enter {
     opacity: 0.01;
-    transition: opacity 0.5s ;
-    transform: translateX(100%);
+    transition: opacity 0.3 s ;
+    transform: translateX(110%);
   }
   .enter.enterActive {
     opacity: 1;
