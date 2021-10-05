@@ -75,12 +75,12 @@ export default function Home() {
       </Head>
       <header id={styles.header}>
         <h1 className={styles.title}>
-          <a href="/">
+          
             EZ API
-          </a>
+    
         </h1>
         <div className={styles.filler}/>
-        <a href=""><FontAwesomeIcon className={styles.github} icon={faGithub}/></a>
+        <a href="https://github.com/danielsitio/EZapi"><FontAwesomeIcon className={styles.github} icon={faGithub}/></a>
       </header>
       <hr/>
       <form  className={styles.form} autoComplete="off">
