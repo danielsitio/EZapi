@@ -40,7 +40,7 @@ export default function Project({setPreferences,actualPreferences}) {
             </div>
                 <div className={styles.options}>
                 <div className={styles.db}>
-                    <label className={styles.label}> DB Connection :</label>
+                    <label className={styles.label}> DB </label>
                     <select id="db" className={styles.select_db} onChange={selectDB}>
                         <option className={styles.option} value="">none</option>
                         <option className={styles.option}value="MySql">MySql</option>

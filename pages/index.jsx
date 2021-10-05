@@ -7,24 +7,62 @@ import {useState} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub} from "@fortawesome/free-brands-svg-icons";
 
-let copia
+let copia,endpoints_names,endpoints_methods,endpoints
 export default function Home() {
 
   const [preferences, setPreferences] = useState({
-    name:"",
+    name:"demo",
     language:"js",
     cors:false,
     db:"",
     endpoints:[]
   })
-
+  const [canGenerate, setCanGenerate] = useState(true)
+  const [generate, setGenerate] = useState("GENERATE")
   function handleSubmit(e){
-   
+    if (canGenerate){
+    setCanGenerate(false)
+    setGenerate("GENERATING...")
     copia=JSON.parse(JSON.stringify(preferences))
-    copia.name=document.getElementById("name").value
+    if(document.getElementById("name").value!==""){
+      copia.name=document.getElementById("name").value
+    }
+    else{
+      copia.name="demo"
+    }
+    
     copia.db=document.getElementById("db").value
+    endpoints_names=Array.from(document.getElementsByClassName("endpoint_text_input__3roj2"))
+    endpoints_methods=Array.from(document.getElementsByClassName("endpoint_select__bwCHN"))
+
+    endpoints=[]
+    for (let i = 0; i < endpoints_names.length; i++) {
+      alert
+      endpoints.push({name:endpoints_names[i].value,method:endpoints_methods[i].value })
+    }
+    copia.endpoints=endpoints;
     setPreferences(copia)
-    alert(JSON.stringify(preferences))
+
+    /*enviar "copia" a la api para que construya el proyecto"*/
+    fetch('https://builder-final.herokuapp.com/api',{
+      method:'POST',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify(copia)
+    })
+    .then(transfer=>transfer.blob())
+    .then(file=>{
+      let elm = document.createElement('a'); 
+      elm.href = URL.createObjectURL(file);  
+      elm.setAttribute('download', copia.name+".zip"); 
+      elm.click()
+      setGenerate("GENERATE")
+      setCanGenerate(true)
+    })
+  }
+
+  
     e.preventDefault()
   }
 
@@ -37,7 +75,9 @@ export default function Home() {
       </Head>
       <header id={styles.header}>
         <h1 className={styles.title}>
-          EZ API
+          <a href="/">
+            EZ API
+          </a>
         </h1>
         <div className={styles.filler}/>
         <a href=""><FontAwesomeIcon className={styles.github} icon={faGithub}/></a>
@@ -56,7 +96,7 @@ export default function Home() {
 
           <div className={styles.actions}>
             <div className={styles.actions_container}>
-              <button  className={styles.button_generate} onClick={handleSubmit}>GENERATE</button>
+              <button  className={styles.button_generate} onClick={handleSubmit}>{generate}</button>
             </div>
           </div>
 

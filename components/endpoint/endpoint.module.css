@@ -3,7 +3,6 @@
     display: flex;
     padding: 10px;
     align-items: center;
-    border-bottom: greenyellow 1px solid;
     margin-bottom: 10px;
 }
 .text_input{
@@ -14,6 +13,9 @@
     outline: none;
     line-height: 40px;
     flex: 50%;
+}
+.text_input:focus{
+    border-bottom: greenyellow 2px solid;
 }
 .filler{
     flex-grow: 1;
@@ -26,6 +28,9 @@
     margin-left: 10px ;
     font-weight: 500;
     padding: 3px;
+}
+.select:focus{
+    border: 2px solid greenyellow;
 }
 .delete{
     margin-left: 30px;
