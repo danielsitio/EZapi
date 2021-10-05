@@ -80,7 +80,7 @@ export default function Home() {
     
         </h1>
         <div className={styles.filler}/>
-        <a href="https://github.com/danielsitio/EZapi"><FontAwesomeIcon className={styles.github} icon={faGithub}/></a>
+        <a href="https://github.com/danielsitio/EZapi" target="_blank" rel="noreferrer"><FontAwesomeIcon className={styles.github} icon={faGithub}/></a>
       </header>
       <hr/>
       <form  className={styles.form} autoComplete="off">
